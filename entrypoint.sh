@@ -5,7 +5,7 @@ set -e
 echo 'Installing bundles...'
 cd ${INPUT_SITE_LOCATION}
 gem install bundler
-bundle install
+bundle install --jobs 4 --retry 3
 bundle list | grep "middleman ("
 
 echo 'Building site...'
